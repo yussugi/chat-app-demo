@@ -112,7 +112,7 @@ const Content = (props: ContentProps) => {
       <div className={classes.input}>
         <TextField value={message} onChange={handleChange} />
         <Button variant="contained" color="secondary" onClick={handleClick}>
-          登録する
+          送信
         </Button>
       </div>
       <List>{postList}</List>
