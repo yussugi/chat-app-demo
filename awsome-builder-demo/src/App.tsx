@@ -55,7 +55,7 @@ const App = () => {
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolBar}>
             <Typography variant="h6" noWrap>
-              ChatApp
+              Octank Insurance Chat Center
             </Typography>
             <div onClick={handleClick} className={classes.signOut}>
               <IconButton

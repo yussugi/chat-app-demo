@@ -22,8 +22,27 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: theme.spacing(10),
       backgroundColor: 'white',
     },
+    userName: {
+      fontFamily: 'Arial',
+      fontSize: '2.4rem',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      padding: theme.spacing(2)
+    },
     input: {
       display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'flex-start',
+      flexDirection: 'row'
+    },
+    inputField: {
+      display: 'flex',
+      justifyContent: 'flex-start',
+      variant: 'outlined'
+    },
+    sendButton: {
+      display: 'flex',
+      paddingLeft : theme.spacing(3)
     },
     myMessage: {
       display: 'flex',
@@ -109,11 +128,16 @@ const Content = (props: ContentProps) => {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
+      <div className={classes.userName}>{props.userName} chat room</div>
       <div className={classes.input}>
+        <div className={classes.inputField}>
         <TextField value={message} onChange={handleChange} />
+        </div>
+        <div className={classes.sendButton}>
         <Button variant="contained" color="secondary" onClick={handleClick}>
-          登録する
+          送信
         </Button>
+        </div>
       </div>
       <List>{postList}</List>
     </Container>
