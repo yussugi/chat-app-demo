@@ -6,6 +6,7 @@ import {
   onAuthUIStateChange,
   CognitoUserInterface,
 } from '@aws-amplify/ui-components'
+import { I18n } from 'aws-amplify'
 import awsconfig from './aws-exports'
 import Content from './Content'
 import { RecoilRoot } from 'recoil'
@@ -15,8 +16,12 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import TranslateSignUp from './TranslateSignUp'
 
 Amplify.configure(awsconfig)
+// 日本語対応
+I18n.putVocabularies(TranslateSignUp)
+I18n.setLanguage('ja')
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,7 +59,7 @@ const App = () => {
       <RecoilRoot>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolBar}>
-            <Typography variant="h6" noWrap>
+            <Typography variant="h4" noWrap>
               Octank Insurance Chat Center
             </Typography>
             <div onClick={handleClick} className={classes.signOut}>

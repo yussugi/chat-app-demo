@@ -24,25 +24,25 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     userName: {
       fontFamily: 'Arial',
-      fontSize: '2.4rem',
+      fontSize: '2.0rem',
       display: 'flex',
       justifyContent: 'flex-start',
-      padding: theme.spacing(2)
+      paddingBottom: theme.spacing(1),
     },
     input: {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      width: '360'
     },
     inputField: {
       display: 'flex',
       justifyContent: 'flex-start',
-      variant: 'outlined'
+      width: '360'
     },
     sendButton: {
       display: 'flex',
-      paddingLeft : theme.spacing(3)
     },
     myMessage: {
       display: 'flex',
@@ -131,12 +131,19 @@ const Content = (props: ContentProps) => {
       <div className={classes.userName}>{props.userName} chat room</div>
       <div className={classes.input}>
         <div className={classes.inputField}>
-        <TextField value={message} onChange={handleChange} />
+          <TextField
+            value={message}
+            onChange={handleChange}
+            label="チャット入力欄"
+            placeholder="文字を入力してください"
+            multiline
+            style={{width: 360}}
+          />
         </div>
         <div className={classes.sendButton}>
-        <Button variant="contained" color="secondary" onClick={handleClick}>
-          送信
-        </Button>
+          <Button variant="contained" color="secondary" onClick={handleClick}>
+            送信
+          </Button>
         </div>
       </div>
       <List>{postList}</List>
