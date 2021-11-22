@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import { postListState, messageState, PostState } from './recoil/ChatState'
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Analytics } from 'aws-amplify'
 import { GraphQLResult } from '@aws-amplify/api'
 import { listPostsSortedByCreatedAt } from './graphql/queries'
 import { createPost } from './graphql/mutations'
@@ -65,6 +65,9 @@ const Content = (props: ContentProps) => {
   const [message, setMessage] = useRecoilState(messageState)
 
   const handleClick = () => {
+    Analytics.record({
+      name: "click_send"
+    })
     postPost()
   }
 

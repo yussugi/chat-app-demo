@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Amplify, { Auth } from 'aws-amplify'
+import Amplify, { Auth, Analytics } from 'aws-amplify'
 import { AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react'
 import {
   AuthState,
@@ -53,6 +53,10 @@ const App = () => {
   const handleClick = () => {
     Auth.signOut()
   }
+
+  Analytics.record({
+    name: "show_home"
+  })
 
   return authState === AuthState.SignedIn && user ? (
     <div>

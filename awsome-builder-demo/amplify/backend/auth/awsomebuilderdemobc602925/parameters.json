@@ -1,6 +1,6 @@
 {
     "identityPoolName": "awsomebuilderdemobc602925_identitypool_bc602925",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "awsomebc602925",
     "userPoolName": "awsomebuilderdemobc602925_userpool_bc602925",
     "autoVerifiedAttributes": [
