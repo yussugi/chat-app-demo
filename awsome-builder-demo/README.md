@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts (for Amplify)
 
 In the project directory, you can run:
 
@@ -28,6 +28,7 @@ Some next steps:\
 Pro tip:\
 Try `amplify add api` to create a backend API and then `amplify publish` to deploy everything
 
+## Available Scripts (for React)
 
 ### `npm install`
 
